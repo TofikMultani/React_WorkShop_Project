@@ -10,7 +10,7 @@ import {
 import { validateFileUpload } from "../config/middleware/filevalidator.js";
 import { uploadProfilePic } from "../config/multer.js";
 
-const router = Router();
+const router = Router();  
 
 router.get("/register", getRegistrations);
 router.put(
