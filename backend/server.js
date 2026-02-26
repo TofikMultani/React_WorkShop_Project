@@ -4,14 +4,14 @@ import cors from "cors";
 import dotenv from "dotenv";
 import path from "path";
 import { fileURLToPath } from "url";
-// import registerRoutes from "./routes/registerRoutes.js";
+import registerRoutes from "./Routes/RegisterRoutes.js";
 
 dotenv.config();
 
 import connectDB from "./config/database.js";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
-// import authRoutes from './routes/authRoutes.js';
+//import authRoutes from './routes/authRoutes.js';
 const app = express();
 app.use(
   cors({
@@ -23,7 +23,7 @@ app.use(
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// app.use("/api/", registerRoutes);
+app.use("/api/", registerRoutes);
 
 app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 
